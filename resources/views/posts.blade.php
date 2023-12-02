@@ -7,8 +7,9 @@
                 <p>
                 By<a href="{{ url('/authors/' . $post->author->username) }}">
 
+                  
                 {{ $post->author ? $post->author->name : 'Unknown' }}</a> in
-                    
+                
                      <a href="{{ url('/categories/' . $post->category->slug) }}">
                     {{ $post->category->name }}
                 </a>

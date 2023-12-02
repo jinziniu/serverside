@@ -24,15 +24,18 @@
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
-                <div class="mb-6">
+
+              <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="thumbnail">
                         Thumbnail
                     </label>
-                    <input class="border border-grey-400 p-2 w-full" type="file" name="thumbnail" id="thumbnail" required>
+
+                    <input class="border border-grey-400 p-2 w-full" type="file" name="thumbnail" id="thumbnail"  required>
                     @error('thumbnail')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
-                </div>
+
+
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="excerpt">
                         Excerpt
