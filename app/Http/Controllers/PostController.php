@@ -43,5 +43,7 @@ class PostController extends Controller
             Post::create($attributes);
             return redirect('/');
     }
+ 
+
 
 }

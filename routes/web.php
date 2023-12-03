@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\PostReviewsController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
@@ -76,3 +77,7 @@ Route::get('admin/posts',[AdminPostController::class,'index'])->middleware('admi
 Route::get('admin/posts/{post}/edit',[AdminPostController::class,'edit'])->middleware('admin');
 Route::patch('admin/posts/{post}',[AdminPostController::class,'update'])->middleware('admin');
 Route::delete('admin/posts/{post}',[AdminPostController::class,'destroy'])->middleware('admin');
+
+Route::get('admin/posts/{post}/edit',[PostController::class,'edit']);
+
+Route::post('posts/{post:slug}/reviews',[PostReviewsController::class,'store']);
