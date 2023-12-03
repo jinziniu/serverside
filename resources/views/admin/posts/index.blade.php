@@ -30,6 +30,7 @@
             border: none;
             border-radius: 4px;
             color: white;
+            margin-right: 5px; /* Added for spacing between buttons */
         }
         .mp-published {
             background-color: #4CAF50; /* Green */
@@ -52,19 +53,29 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Example row -->
-                <tr>
-                    <td>Post Title 1</td>
-                    <td>Published</td>
-                    <td>
-                        <button class="mp-button mp-published">Published</button>
-                        <button class="mp-button mp-edit">Edit</button>
-                    </td>
-                </tr>
-                <!-- Repeat rows for each post -->
-                <!-- ... -->
+                @foreach ($posts as $post)
+                    <!-- Example row -->
+                    <tr>
+                        <td>
+                            <a href="/posts/{{$post->slug}}">{{$post->title}}</a>
+                        </td>
+                        <td>Published</td>
+                        <td>
+                            <button class="mp-button mp-published">Published</button>
+                            <a href="/admin/posts/{{$post->id}}/edit" class="mp-button mp-edit">Edit</a>
+                            <form method="POST" action="/admin/posts/{{$post->id}}" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button class="mp-button mp-edit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <!-- Repeat rows for each post -->
+                    <!-- ... -->
+                @endforeach
             </tbody>
         </table>
     </div>
 </body>
+
 </html>
