@@ -18,6 +18,10 @@
     <div style="line-height: 1.8; color: #555; font-size: 18px;">
       {!! $post->body !!}
     </div>
+<div style="line-height: 1.8; color: #555; font-size: 18px;">
+  <a href="{{ $post->source }}" target="_blank">{{$post->source}}</a>
+</div>
+
   </article>
 
   

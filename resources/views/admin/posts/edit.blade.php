@@ -17,12 +17,23 @@
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
+
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="slug">
                         Slug
                     </label>
                     <input class="border border-grey-400 p-2 w-full" type="text" name="slug" id="slug"value="{{$post->slug}}" required>
                     @error('slug')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
+                </div>
+
+               <div class="mb-6">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="source">
+                        source
+                    </label>
+                    <input class="border border-grey-400 p-2 w-full" type="text" name="source" id="source"value="{{$post->source}}" required>
+                    @error('source')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
@@ -58,6 +69,8 @@
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
+
+
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="category_id">
                         Category

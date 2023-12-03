@@ -26,6 +26,11 @@ class PostController extends Controller
     
         return view('admin.posts.create');
     }
+    
+    public function edit(Post $post)
+    {
+        return view('admin.posts.edit');
+    }
 
     public function store()
     {
@@ -34,6 +39,7 @@ class PostController extends Controller
                 'title' => 'required',
                 'thumbnail' => 'required|image',
                 'slug' => ['required',Rule::unique('posts','slug')],
+                'source' => 'required',
                 'excerpt' => 'required',
                 'body' => 'required',
                 'category_id' => ['required',Rule::exists('categories','id')]

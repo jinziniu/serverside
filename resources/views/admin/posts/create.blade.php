@@ -25,6 +25,17 @@
                     @enderror
                 </div>
 
+                <div class="mb-6">
+                        <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="source">
+                            Source
+                        </label>
+                        <input class="border border-grey-400 p-2 w-full" type="text" name="source" id="source" value="{{ old('source') }}" >
+                        @error('source')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+
               <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="thumbnail">
                         Thumbnail
@@ -73,6 +84,7 @@
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
                 </div>
+                
        <button type="submit">Publish</button>
 
             </form>

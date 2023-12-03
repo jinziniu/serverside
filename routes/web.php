@@ -78,6 +78,6 @@ Route::get('admin/posts/{post}/edit',[AdminPostController::class,'edit'])->middl
 Route::patch('admin/posts/{post}',[AdminPostController::class,'update'])->middleware('admin');
 Route::delete('admin/posts/{post}',[AdminPostController::class,'destroy'])->middleware('admin');
 
-Route::get('admin/posts/{post}/edit',[PostController::class,'edit']);
+
 
 Route::post('posts/{post:slug}/reviews',[PostReviewsController::class,'store']);
