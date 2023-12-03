@@ -1,15 +1,16 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Post;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Validation\Rule;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 
 
 class PostController extends Controller
-{
+{     
     public function index()
-    {
+    {  
         return view('posts',[
             'posts' => Post::latest()->with('category','author')->get()
         ]);

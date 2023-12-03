@@ -12,10 +12,14 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/admin/posts/create">New Post</a>
+          
+            @if (auth()->user()->can('admin'))
+                
+               <a class="dropdown-item" href="/admin/posts/create">New Post</a>
                 <a class="dropdown-item" href="/admin/posts">All posts</a>
                 <!-- Add more dropdown items here if needed -->
             </div>
+               @endif
         </li>
                 
                 <li>
