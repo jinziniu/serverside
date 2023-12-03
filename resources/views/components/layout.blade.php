@@ -38,26 +38,10 @@
         }
 
         /* Footer Styling */
-        footer {
-            background-color: #f8f9fa;
-            color: #555;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            border-top: 1px solid #e7e7e7;
-        }
-
-        footer a {
-            color: #007bff;
-            text-decoration: none;
-        }
+        
 
         /* Hover effect for links */
-        a:hover {
-            text-decoration: underline;
-        }
+ 
     </style>
 </head>
 <body>
@@ -67,9 +51,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 My Blog. All rights reserved.</p>
-    </footer>
+
 
     <!-- Your existing topbar and flash components -->
  
