@@ -3,6 +3,13 @@
 <nav class="top-bar">
     <div class="container">
         <a href="{{ url('/') }}" class="brand">My Blog</a>
+
+ <form class="search-form" action="#" method="get">
+    <input type="text" name="search" class="search-input" placeholder="Search..." value="{{ request('search')}}">
+</form>
+
+
+
         <ul class="navigation">
             <!-- Authentication Links -->
             @auth
@@ -39,6 +46,25 @@
 <!-- ... (保留原有的 HTML 结构) ... -->
 
 <style>
+
+        .top-bar .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-bar .search-input {
+            padding: 0.5rem;
+            border: none;
+            margin-right: 0.5rem;
+        }
+
+        .top-bar .search-button {
+            padding: 0.5rem;
+            background-color: #66b3ff; /* Light blue */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     /* Top Bar Styles */
     .top-bar {
         background-color: #004d99; /* Dark blue background */
@@ -145,5 +171,6 @@
         .top-bar .navigation .logout-button {
             padding: 0.5rem; /* Adjust padding for smaller screens */
         }
+        
     }
 </style>

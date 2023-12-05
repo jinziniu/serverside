@@ -27,10 +27,18 @@ use Symfony\Component\Yaml\Yaml;
 */
 
 Route::get('/', function () {
-     return view('posts',[
-      'posts' => Post::latest()->with('category','author')->get()
-  ]);
+  $query = Post::latest()->with('category', 'author');
+
+  if ($search = request('search')) {
+      $query->where('title', 'like', '%' . $search . '%')
+            ->orWhere('body', 'like', '%' . $search . '%');
+  }  
+
+  $posts = $query->get();
+
+  return view('posts', compact('posts'));
 });
+
 
 
 
